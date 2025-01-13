@@ -1,0 +1,14 @@
+
+
+body{
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+
+}
+
+.bloc{
+    background-color: rgb(247, 203, 145);
+    border: 2px black solid;
+    margin: 5px;
+}

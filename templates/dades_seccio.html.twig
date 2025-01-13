@@ -1,8 +1,31 @@
 {% extends 'base.html.twig' %}
 
-{% block body %}
-    <h2 id="titolinici"> Dades de la secció </h2>
-    <p id="paragrafinici">Paràgraf de la secció</p>
+{% block stylesheets%}
+<link href="{{ asset('assets/css/estilsseccio.css') }}" rel="stylesheet" />
+{% endblock %}
 
-    <img id="imatgeinici" src="https://media.discordapp.net/attachments/256370845876879371/1327733790285758535/Gg9BT6AXQAE-Co0.png?ex=67857573&is=678423f3&hm=afdc00c94c434e47c4862a5908151f9b8164970abca830a256ee522dd804fdbd&=&format=webp&quality=lossless&width=700&height=467" />
+{% block body %}
+    <h2 id="titolinici"> Dades de la secció {{codi}} </h2>
+
+    <div class="bloc"> 
+        <p id="paragrafinici">{{nom}}</p>
+    </div>
+
+      <div class="bloc"> 
+        <p id="paragrafinici">{{any}}</p>
+    </div>
+
+      <div class="bloc"> 
+        <p id="paragrafinici">{{descripcio}}</p>
+    </div>
+
+    <div class="bloc"> 
+        <ul>
+        {% for article in articles %}
+            <li>{{ article }}</li>
+        {% endfor %}
+        </ul>
+    </div>
+    
+    <li><a href="{{path('home')}}" class="nav-link  active"><i class="bx bx-home"></i> <span>Inici</span></a></li>
 {% endblock %}
