@@ -1,19 +1,21 @@
 <?php
 
 namespace App\Controller;
-
+use Symfony\Component\HttpFoundation\Response;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
-use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\Routing\Attribute\Route;
 
 class IniciController extends AbstractController
 {
-    #[Route('/', name: 'inici')]
-    public function index(): JsonResponse
+    #[Route('/', name: 'home')]
+    public function index()
     {
-        return $this->json([
-            'message' => 'Projecte Gestió Retail de 2n de DAW',
-            'path' => 'src/Controller/IniciController.php',
-        ]);
+        return $this->render("base.html.twig");
+    }
+
+    #[Route('/inici', name: 'inici')]
+    public function index2()
+    {
+        return $this->render("inici.html.twig");
     }
 }
