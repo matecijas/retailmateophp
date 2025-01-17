@@ -1,0 +1,20 @@
+{% extends 'base.html.twig' %}
+
+{% block stylesheets%}
+<link href="{{ asset('assets/css/estilsseccio.css') }}" rel="stylesheet" />
+{% endblock %}
+
+{% block body %}
+    <h2 id="titolinici"> Dades de la secció {{codi}} </h2>
+    <br>
+    <div class="block">
+        <img src="https://media.istockphoto.com/id/512050394/vector/deny-emoticon.jpg?s=612x612&w=0&k=20&c=O354C6QKxDlh-8Wt_IBRDQEi6EH5wxRZOF3JnKeuJ4U=">
+    </div>
+
+    <div class="bloc"> 
+        <h3> Seccio no trobada</h3>
+    </div>
+
+    
+    <a href="{{path('home')}}" class="nav-link  active"><img src="https://www.iconarchive.com/download/i103430/paomedia/small-n-flat/house.1024.png" style="width:25px"> <span>Inici</span></a>
+{% endblock %}

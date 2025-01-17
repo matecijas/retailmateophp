@@ -71,7 +71,9 @@ class SeccioController extends AbstractController
                 'articles' => $resultat['articles']
             ));
         } else {
-            return new Response("Seccio no existeix");
+            return $this->render('dades_seccio_error.html.twig', array(
+                'codi'=> $codi
+            ));
     }
 }
 }

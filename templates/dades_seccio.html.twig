@@ -6,6 +6,11 @@
 
 {% block body %}
     <h2 id="titolinici"> Dades de la secció {{codi}} </h2>
+    <br>
+    <div class="block">
+        <p>Imatge secció</p>
+        <img src="https://media.istockphoto.com/id/1222861265/photo/food-box-on-gray-background.jpg?s=612x612&w=0&k=20&c=qCRyqr5pEIlnBfHN4WkrvhyABZU-CaL9wvRVV4jPIj0=">
+    </div>
 
     <div class="bloc"> 
         <p id="paragrafinici">{{nom}}</p>
@@ -27,5 +32,5 @@
         </ul>
     </div>
     
-    <li><a href="{{path('home')}}" class="nav-link  active"><i class="bx bx-home"></i> <span>Inici</span></a></li>
+    <a href="{{path('inici')}}" class="nav-link  active"><img src="https://www.iconarchive.com/download/i103430/paomedia/small-n-flat/house.1024.png" style="width:25px"> <span>Inici</span></a>
 {% endblock %}
