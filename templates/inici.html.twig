@@ -4,8 +4,15 @@
 {% endblock %}
 
 {% block body %}
-    <h2 id="titolinici"> Títol del inici </h2>
-    <p id="paragrafinici">Paràgraf del inici</p>
+    <h2 id="titolinici"> Página d'inici </h2>
+    
+    {% for seccio in dades %}
+         <a href="{{path('dades_seccio', {'codi':seccio.codi} )}}">
+        <div class="bloc">
+            Visitar secció {{ seccio.nom }}
+        </div>
+        </a>
+    {% endfor %}
 
     <a href="{{path('dades_seccio', {'codi':3} )}}">
         <img id="imatgeinici" src="https://img.freepik.com/free-vector/shop-with-sign-we-are-open_52683-38687.jpg" />

@@ -6,40 +6,16 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\Routing\Attribute\Route;
 use Symfony\Component\HttpFoundation\Response;
+use App\Service\ServeiDadesSeccio;
 
 class SeccioController extends AbstractController
 {
 
-    private $dades = array(
-        array(
-            "codi" => 1,
-            "nom" => "Roba",
-            "descripcio" => "Descripció de la secció",
-            "any" => "2024",
-            "articles" => array("Pantalons", "Camisa", "Jersey", "Xaqueta"),
-        ),
-        array(
-            "codi" => 2,
-            "nom" => "Ferramentes",
-            "descripcio" => "Descripció de la secció",
-            "any" => "2023",
-            "articles" => array("Destornillador", "Clau", "Pegament", "Tuerques"),
-        ),
-        array(
-            "codi" => 3,
-            "nom" => "Cuina",
-            "descripcio" => "Descripció de la secció",
-            "any" => "2025",
-            "articles" => array("Sartens", "Perols", "Culleres", "Forqueta"),
-        ),
-        array(
-            "codi" => 4,
-            "nom" => "Esport",
-            "descripcio" => "Descripció de la secció",
-            "any" => "2021",
-            "articles" => array("Pantalons deportius", "Camisa deportiva", "Jersey deportiu", "Xaqueta deportiva"),
-        ),
-    );
+    private $dades;
+    
+    public function __construct($dadesSeccions){
+        $this->dades = $dadesSeccions->get();
+    }
 
     #[Route('/dades_seccio', name: 'dades_seccio_error')]
     public function fitxa_error()
@@ -48,6 +24,7 @@ class SeccioController extends AbstractController
             'codi' => $this->dades[0]['codi'],
             'nom' => $this->dades[0]['nom'],
             'any' => $this->dades[0]['any'],
+            'imatge' => $this->dades[0]['imatge'],
             'descripcio' => $this->dades[0]['descripcio'],
             'articles' => $this->dades[0]['articles']
         ]);
@@ -67,6 +44,7 @@ class SeccioController extends AbstractController
                 'codi' => $resultat['codi'],
                 'nom' => $resultat['nom'],
                 'any' => $resultat['any'],
+                'imatge' => $resultat['imatge'],
                 'descripcio' => $resultat['descripcio'],
                 'articles' => $resultat['articles']
             ));
